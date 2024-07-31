@@ -6,6 +6,7 @@ import { addToCart } from "../redux/bazarSlice";
 import { ToastContainer, toast } from "react-toastify";
 
 function ProductsCard({ product }) {
+  console.log("productcard", product);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const _id = product.title;
@@ -49,7 +50,7 @@ function ProductsCard({ product }) {
               onClick={() =>
                 dispatch(
                   addToCart({
-                    _id: product._id,
+                    _id: product.id,
                     title: product.title,
                     image: product.image,
                     price: product.price,

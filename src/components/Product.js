@@ -13,6 +13,7 @@ function Product() {
   useEffect(() => {
     setDetails(location.state.item);
   }, []);
+  console.log("productpage", details);
 
   return (
     <div>
@@ -79,7 +80,7 @@ function Product() {
               onClick={() =>
                 dispatch(
                   addToCart({
-                    _id: details._id,
+                    _id: details.id,
                     title: details.title,
                     image: details.image,
                     price: details.price,
